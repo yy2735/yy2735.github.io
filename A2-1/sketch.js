@@ -1,21 +1,12 @@
-/*
-Adopted from Processing Example
-https://processing.org/examples/clock.html
-*/
 
-var cx, cy; // center position of canvas
-// Radius for hands of the clock
-var secondsRadius;
-var minutesRadius;
-var hoursRadius;
-var clockDiameter;
+
 
 function setup() {
 
   createCanvas(500, 500);
   stroke(10);
 
-  var radius = min(width, height) / 2; // this is the maximum possible radius
+  var radius = min(width, height) / 2; 
   secondsRadius = radius * 0.72;
   minutesRadius = radius * 0.60;
   hoursRadius = radius * 0.50;
@@ -28,7 +19,6 @@ function setup() {
 function draw() {
   background(204,255,204);
 
-  // Draw the clock background
   fill(255,255,153);
   noStroke();
   ellipse(cx, cy, clockDiameter, clockDiameter);
@@ -38,13 +28,10 @@ fill(204,255,204);
   ellipse(cx, cy, clockDiameter*0.9, clockDiameter*0.9);
  
 
-  // Angles for sin() and cos() start at 3 o'clock;
-  // subtract HALF_PI to make them start at the top
   var s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
   var m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI;
   var h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
 
-  // Draw the hands of the clock
   stroke(153,204,255);
   strokeWeight(2);
   line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
@@ -53,7 +40,6 @@ fill(204,255,204);
   strokeWeight(10);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 
-  // Draw the minute ticks
   strokeWeight(10);
   fill(204,255,204)
   beginShape(POINTS);
