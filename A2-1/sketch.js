@@ -12,7 +12,7 @@ var clockDiameter;
 
 function setup() {
 
-  createCanvas(640, 480);
+  createCanvas(500, 500);
   stroke(10);
 
   var radius = min(width, height) / 2; // this is the maximum possible radius
