@@ -12,8 +12,8 @@ var clockDiameter;
 
 function setup() {
 
-  createCanvas(640, 360);
-  stroke(255);
+  createCanvas(640, 480);
+  stroke(10);
 
   var radius = min(width, height) / 2; // this is the maximum possible radius
   secondsRadius = radius * 0.72;
@@ -26,12 +26,17 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(204,255,204);
 
   // Draw the clock background
-  fill(80);
+  fill(255,255,153);
   noStroke();
   ellipse(cx, cy, clockDiameter, clockDiameter);
+
+fill(204,255,204);
+  noStroke();
+  ellipse(cx, cy, clockDiameter*0.9, clockDiameter*0.9);
+ 
 
   // Angles for sin() and cos() start at 3 o'clock;
   // subtract HALF_PI to make them start at the top
@@ -40,16 +45,17 @@ function draw() {
   var h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
 
   // Draw the hands of the clock
-  stroke(255);
-  strokeWeight(1);
-  line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
+  stroke(153,204,255);
   strokeWeight(2);
+  line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
+  strokeWeight(5);
   line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(4);
+  strokeWeight(10);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 
   // Draw the minute ticks
-  strokeWeight(2);
+  strokeWeight(10);
+  fill(204,255,204)
   beginShape(POINTS);
   for (var a = 0; a < 360; a+=6) {
     var angle = radians(a);
