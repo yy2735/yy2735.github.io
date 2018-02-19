@@ -32,8 +32,5 @@ var s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
   fill(255,0,0,150) // red
   arc(x,y,200,200,0,s,CHORD);
 
-    fill(0);
-  text('The time right now is:\n' + hour + ':'+ minute +':'+ second,400,450);
- 
 
 }

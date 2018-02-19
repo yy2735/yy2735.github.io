@@ -13,20 +13,19 @@ function draw(){
   var heightvar=map(s,0,60,0,height)
   fill(0);
   text('The time right now is:\n' + h + ':'+ m +':'+ s,500,600);
-  ellipse(width/2, height/2, m*10,m*10);
-
-
-
-  push();
-  translate(width/2,height/2)
-  rotate(PI/s);
-  rect(0,0,100,10);
-  pop();
-
+  ellipse(250,250, height/2, s*10,s*10);
 
 push();
-  translate(width/2,height/2)
-  rotate(PI/s);
-  triangle(10,10,50,50,100,100);
+fill(255,255,255)
+  rect(10,10,m*10,m*10);
   pop();
+
+ push();
+  scale(h,h);
+  rect(10,10,10,10);
+  pop();
+
+
+
+
 }
