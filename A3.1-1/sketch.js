@@ -14,10 +14,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 1000);
+  createCanvas(500, 1000);
   background(0);
 
-  textSize(14);
+  textSize(10);
   textAlign(LEFT);
 
   noLoop(); 
@@ -30,7 +30,7 @@ function draw() {
   background(0);
 
   var lineheight = 50;
-  var margin = 1;
+  var margin = 10;
   translate(margin, margin);
 
   for (var i = 0; i < headlines.length; i++) {
@@ -41,11 +41,9 @@ function draw() {
     for (var j=0; j<words.length; j++) {
       // draw headline
       if (sections[i] == 'U.S.') {
-        fill(255, 255, 255);
-      } else if (sections[i] == 'New') {
-        fill(255, 0, 0);
+        fill(255,255,255);
       } else {
-        fill(105, 129, 164);
+        fill(255, 0, 0);
       }
       text(words[j]+ ' ', nextX, i*lineheight);
       nextX += textWidth(words[j]+' ');

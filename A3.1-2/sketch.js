@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 2000);
+  createCanvas(1000, 2000);
   background(255);
 
   textSize(10);
@@ -36,7 +36,7 @@ function draw() {
 
     var nextX = 0;
 
-      var rectheight = 40;
+      var rectheight = 4;
 
 
 //draw sign to circles
@@ -44,7 +44,7 @@ function draw() {
 
     for (var j = 0; j < words.length; j++) {
       stroke(255, 102, 102);
-      strokeWeight(1);
+      strokeWeight(0.1);
       line(i*lineheight,0, nextX, i*lineheight);
 
       //text
@@ -69,8 +69,8 @@ function draw() {
       //signs 
       if (sign.includes(words[j].toLowerCase())) {
         noStroke();
-        fill(0);
-        rect(nextX,i*lineheight,50,50);
+        fill(255, 179, 102);
+        rect(nextX,i*lineheight,40,40);
         //punc
       } else if (punc.includes(words[j])){
         noStroke();
@@ -78,8 +78,7 @@ function draw() {
         ellipse(nextX,i*lineheight,20,20);
         //alphabets
       } else if (str2.includes(words[j].toLowerCase())){
-        noStroke();
-        fill(255,153,51,50);
+        fill(179, 255, 102);
         ellipse(nextX,i*lineheight,size,size);
 
       };
@@ -104,6 +103,7 @@ function extractHeadlines() {
 
     append(headlines, h);
   }
+
 
   // console.log(headlines); // make sure counted data looks as expected
 }
