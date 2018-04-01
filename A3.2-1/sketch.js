@@ -86,8 +86,6 @@ function extractHeadlines() {
     //console.log(ss);
   }
 
-  //console.log(headlines); // make sure counted data looks as expected
-  //console.log(maxHeadLen);
-  //console.log(minHeadLen);
+
 }
->>>>>>> parent of 46c7e43... h
+
