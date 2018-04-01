@@ -49,22 +49,17 @@ function draw() {
 
       //text
 
-      if (mouseIsPressed)
-      {
-
-      fill("#99ff33");
-      textStyle(BOLD);
-      textFont('Comic Sans MS');
-      textSize(50 + (mouseY / width)*1000);
-      textAlign(LEFT);
-      text(words[j]+' ', nextX, i*lineheight);
+      if (mouseIsPressed){
+    fill(180);
+    text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
-
     } else {
-      noFill();
-      noStroke();
-      text(words[j]+' ', nextX, i*lineheight);
-      nextX += textWidth(words[j]+'  ')};
+    noFill();
+    noStroke();
+    text(words[j]+' ', nextX, i*lineheight);
+    nextX += textWidth(words[j]+'  ');
+    
+    }
     
 
       //define size of alphabets
