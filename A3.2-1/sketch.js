@@ -40,12 +40,9 @@ function draw() {
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
     fill(191,227,255,150);
-    rect(0, 0 + i*lineheight, headlines[i].length)
+    
 
-    //draw headline, section, subsection
 
-    // fill(0, 128 + sin(frameCount*0.1) * 128, 0);
-    // text(section[i], 540, 100 + i*lineheight);
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
       push();
       fill("#FFC859");
