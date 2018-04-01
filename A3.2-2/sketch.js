@@ -66,20 +66,7 @@ function draw() {
 
 
 
-      //signs 
-      if (sign.includes(words[j].toLowerCase())) {
-        noStroke();
-        fill(255, 179, 102);
-        rect(nextX,i*lineheight,40,40);
-        //punc
-      } else if (punc.includes(words[j])){
-        noStroke();
-        fill(51,204,204,50);
-        ellipse(nextX,i*lineheight,20,20);
-        //alphabets
-      } else if (str2.includes(words[j].toLowerCase())){
-        fill(179, 255, 102);
-        ellipse(nextX,i*lineheight,size,size);
+      
 
         if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
       {
