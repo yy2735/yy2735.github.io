@@ -1,5 +1,4 @@
 var headlines = [];
-var sections = [];
 
 function preload() {
 
@@ -33,38 +32,37 @@ function draw() {
   var margin = 10;
   translate(margin, margin);
 
+  for (var i = 0; i < headlines.length; i++) {
+    //draw rectangle
+    fill(191,227,255,150);
+    rect(0, 100 + i*lineheight, 6*headlines[i].length)
 
-    for (var j=0; j<words.length; j++) {
-      // draw headline
-      if (sections[i] == 'sex') {
-        fill(255,255,0);
-      } else {
-        fill(0,0,255);
-      }
-      text(words[j]+ ' white house', nextX, i*lineheight);
-      nextX += textWidth(words[j]+' ');
-    }
+    //draw headline, section, subsection
+
+    // fill(0, 128 + sin(frameCount*0.1) * 128, 0);
+    // text(section[i], 540, 100 + i*lineheight);
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
       push();
-      fill(225,0,225);
+      fill("#FFC859");
       textStyle(BOLD);
+      textFont('Helvetica');
       textSize(10 + (mouseX / width)*30);
       textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
     } else {
-      fill(0,225,225)
+      fill("#00A6FF")
       textSize(12)
+      textFont('Helvetica');
       text(headlines[i], 0, 100 + i*lineheight);    }
 
-  }
-}
-  }
-}
+  
 
+
+
+
+     
 function extractHeadlines() {
-
- 
 
   for (var i = 0; i < nytResponse.results.length; i++) {
     var h = nytResponse.results[i].title;
@@ -75,12 +73,3 @@ function extractHeadlines() {
 
   // console.log(headlines); // make sure counted data looks as expected
 }
-
-function extractSections() {
-  for (var i = 0; i < nytResponse.results.length; i++) {
-    var section = nytResponse.results[i].section;
-    append(sections, section);
-  }
-  //console.log(sections);
-}
-
