@@ -27,7 +27,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255,255,255);
 
  
   var margin = 10;
@@ -38,22 +38,19 @@ function draw() {
 
 
   for (var i = 0; i < headlines.length; i++) {
-    //draw rectangle
-    fill(191,227,255,150);
-    
 
+    fill("#ff9900");
+    
 
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
       push();
-      fill("#FFC859");
+      fill("#99cc00");
       textStyle(BOLD);
-      textFont('Helvetica');
       textSize(10 + (mouseX / width)*30);
-      textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
     } else {
-      fill("#00A6FF")
+      fill("#ff6666")
       textSize(12)
       textFont('Helvetica');
       text(headlines[i], 0, 100 + i*lineheight);    }
