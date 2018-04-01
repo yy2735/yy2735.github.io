@@ -39,7 +39,7 @@ function draw() {
 
   for (var i = 0; i < headlines.length; i++) {
     fill("#3366ff");
-    rect(100, 100 + i*lineheight, 4*headlines[i].length)
+    rect(100, 100 + i*lineheight, 10*headlines[i].length)
 
 
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
@@ -47,7 +47,7 @@ function draw() {
       fill("#99ff33");
       textStyle(BOLD);
       textFont('Comic Sans MS');
-      textSize(10 + (mouseY / width)*10);
+      textSize(10 + (mouseY / width)*50);
       textAlign(LEFT);
       text(headlines[i], 50, 50 + i*lineheight); 
       pop();
