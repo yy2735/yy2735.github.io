@@ -47,8 +47,8 @@ function draw() {
       fill("#99cc00");
       textStyle(BOLD);
       textFont('Helvetica');
-      textSize(10 + (mouseY / margin)*10);
-      textAlign(LEFT);
+      textSize(10 + (mouseY / margin)*2);
+      textAlign(RIGHT);
       text(headlines[i], 100, 100 + i*lineheight); 
       pop();
     } else {
