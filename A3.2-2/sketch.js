@@ -38,7 +38,9 @@ function draw() {
 
       var rectheight = 4;
 
-
+ if (mouseX > margin && mouseX < margin+linelength && mouseY < margin+i*lineheight && mouseY > margin+i*lineheight+(-1*lineheight))
+      {fill(255);
+        text(headlines[i], 0, i*lineheight);}
 //draw sign to circles
 
 
