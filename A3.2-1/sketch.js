@@ -48,7 +48,23 @@ function draw() {
       text(words[j]+ ' white house', nextX, i*lineheight);
       nextX += textWidth(words[j]+' ');
     }
-    
+    if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
+      push();
+      fill("#FFC859");
+      textStyle(BOLD);
+      textFont('Helvetica');
+      textSize(10 + (mouseX / width)*30);
+      textAlign(RIGHT);
+      text(headlines[i], 800, 100 + i*lineheight); 
+      pop();
+    } else {
+      fill("#00A6FF")
+      textSize(12)
+      textFont('Helvetica');
+      text(headlines[i], 0, 100 + i*lineheight);    }
+
+  }
+}
   }
 }
 
