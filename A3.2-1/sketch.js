@@ -40,8 +40,8 @@ function draw() {
 
     for (var j=0; j<words.length; j++) {
       // draw headline
-      if (sections[i] == 'Trump') {
-        fill(255,255,255);
+      if (sections[i] == 'sex') {
+        fill(255,255,0);
       } else {
         fill(0,0,255);
       }
