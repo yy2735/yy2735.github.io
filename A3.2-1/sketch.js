@@ -1,7 +1,27 @@
 var headlines = [];
-var section = [];
-var subsection = [];
-var maxHeadLen, minHeadLen;
+
+function extractHeadlines() {
+  //console.log(nytResponse); // take a look at the full API response structure
+
+  for (var i = 0; i < (nytResponse.results.length); i++) {
+    var h = nytResponse.results[i].title;
+    // besides .title, other text data available to you include:
+    // .abstract, .byline, .section, etc. etc.
+
+    if (!maxHeadLen) {
+      maxHeadLen = h.length;
+    } else if (h.length > maxHeadLen) {
+      maxHeadLen = h.length;
+    }
+
+    if (!minHeadLen) {
+      minHeadLen = h.length;
+    } else if (h.length < minHeadLen) {
+      minHeadLen = h.length;
+    }
+    append(headlines, h);
+
+    
 
 function preload() {
 
@@ -29,8 +49,8 @@ function setup() {
 function draw() {
   background(0);
 
-  // Set the left and top margin
-  var margin = 40;
+ 
+  var margin = 10;
   translate(margin, margin);
 
   var lineheight = 30;
@@ -65,26 +85,7 @@ function draw() {
   }
 }
 
-function extractHeadlines() {
-  //console.log(nytResponse); // take a look at the full API response structure
 
-  for (var i = 0; i < (nytResponse.results.length); i++) {
-    var h = nytResponse.results[i].title;
-    // besides .title, other text data available to you include:
-    // .abstract, .byline, .section, etc. etc.
-
-    if (!maxHeadLen) {
-      maxHeadLen = h.length;
-    } else if (h.length > maxHeadLen) {
-      maxHeadLen = h.length;
-    }
-
-    if (!minHeadLen) {
-      minHeadLen = h.length;
-    } else if (h.length < minHeadLen) {
-      minHeadLen = h.length;
-    }
-    append(headlines, h);
     //console.log(ss);
   }
 
