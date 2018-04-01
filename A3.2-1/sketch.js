@@ -52,8 +52,8 @@ function draw() {
       push();
       fill("#99ff33");
       textStyle(BOLD);
-      textFont('Helvetica');
-      textSize(5 + (mouseY / width)*5);
+      textFont('Chicle');
+      textSize(10 + (mouseY / width)*5);
       textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
