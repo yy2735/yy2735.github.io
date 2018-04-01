@@ -66,9 +66,13 @@ function draw() {
 
 
 
-      
-
-        if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
+      //signs 
+      if (sign.includes(words[j].toLowerCase())) {
+        noStroke();
+        fill(255, 179, 102);
+        rect(nextX,i*lineheight,40,40);
+        //punc
+      } else if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
       {
       push();
       fill("#99ff33");
@@ -78,11 +82,7 @@ function draw() {
       textAlign(LEFT);
       text(headlines[i], 50, 50 + i*lineheight); 
       pop();
-    } else {
-      fill("#3366ff")
-      textSize(12)
-      textFont('Helvetica');
-      text(headlines[i], 100, 100 + i*lineheight);    }
+  
 
       };
       
