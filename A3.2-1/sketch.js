@@ -47,9 +47,9 @@ function draw() {
       fill("#99cc00");
       textStyle(BOLD);
       textFont('Helvetica');
-      textSize(10 + (mouseY / margin)*2);
-      textAlign(RIGHT);
-      text(headlines[i], 100, 100 + i*lineheight); 
+      textSize(10 + (mouseY / margin)*5);
+      textAlign(LEFT);
+      text(headlines[i], 10, 10 + i*lineheight); 
       pop();
     } else {
       fill("#00A6FF")
@@ -61,29 +61,13 @@ function draw() {
 }
 
 function extractHeadlines() {
-  //console.log(nytResponse); // take a look at the full API response structure
 
-  for (var i = 0; i < (nytResponse.results.length); i++) {
+ 
+
+  for (var i = 0; i < nytResponse.results.length; i++) {
     var h = nytResponse.results[i].title;
     // besides .title, other text data available to you include:
     // .abstract, .byline, .section, etc. etc.
-
-    if (!maxHeadLen) {
-      maxHeadLen = h.length;
-    } else if (h.length > maxHeadLen) {
-      maxHeadLen = h.length;
-    }
-
-    if (!minHeadLen) {
-      minHeadLen = h.length;
-    } else if (h.length < minHeadLen) {
-      minHeadLen = h.length;
-    }
     append(headlines, h);
-    //console.log(ss);
   }
-
-  //console.log(headlines); // make sure counted data looks as expected
-  //console.log(maxHeadLen);
-  //console.log(minHeadLen);
 }
