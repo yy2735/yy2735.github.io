@@ -49,7 +49,7 @@ function draw() {
 
       //text
 
-      if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
+      if (mouseIsPressed)
       {
       push();
       fill("#99ff33");
@@ -60,14 +60,10 @@ function draw() {
       text(headlines[i], 50, 50 + i*lineheight); 
       pop();
     } else {
-      fill("#3366ff")
-      textSize(12)
-      textFont('Helvetica');
-      text(headlines[i], 100, 100 + i*lineheight);    }
       noFill();
       noStroke();
       text(words[j]+' ', nextX, i*lineheight);
-      nextX += textWidth(words[j]+'  ');
+      nextX += textWidth(words[j]+'  ')};
     
 
       //define size of alphabets
