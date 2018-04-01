@@ -49,7 +49,7 @@ function draw() {
 
       //text
 
-      if (mouseIsPressed){
+     if (mouseIsPressed){
     fill(180);
     text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
@@ -58,6 +58,7 @@ function draw() {
     noStroke();
     text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
+    
     
     }
     
@@ -89,13 +90,7 @@ function draw() {
         fill(179, 255, 102);
         ellipse(nextX,i*lineheight,size,size);
 
-for (var i = 0; i < headlines.length; i++) {
-    var rectwidth = map(headlines[i].length,minHeadLen, maxHeadLen, margin, width-margin*2);
 
-    // show section on mouseover
-    if (mouseX > margin && mouseX < margin+rectwidth && mouseY < margin+i*lineheight && mouseY > margin+i*lineheight+(-15*rectheight)) {
-      fill(51,204,204);
-      text(section[i], mouseX+50, mouseY, 200-5, 50-5);
 
       };
       
