@@ -66,13 +66,7 @@ function draw() {
 
 
 
-      //signs 
-      if (sign.includes(words[j].toLowerCase())) {
-        noStroke();
-        fill(255, 179, 102);
-        rect(nextX,i*lineheight,40,40);
-        //punc
-      } else if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
+       if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
       {
       push();
       fill("#99ff33");
