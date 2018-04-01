@@ -15,7 +15,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800,800);
+  createCanvas(500,1000);
   background(0);
 
   textSize(10);
@@ -37,18 +37,23 @@ function draw() {
 
     var nextX = 0;
 
-    for (var j=0; j<words.length; j++) {
-      // draw headline
-      if (sections[i] == 'U.S.') {
-        fill(255,255,255);
-      } else {
-        fill(255, 0, 0);
-      }
-      text(words[j]+ ' ', nextX, i*lineheight);
-      nextX += textWidth(words[j]+' ');
+    
     
 
-    
+    if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
+      push();
+      fill("#99cc00");
+      textStyle(BOLD);
+      textFont('Helvetica');
+      textSize(10 + (mouseY / margin)*5);
+      textAlign(LEFT);
+      text(headlines[i], 10, 10 + i*lineheight); 
+      pop();
+    } else {
+      fill("#00A6FF")
+      textSize(12)
+      textFont('Helvetica');
+      text(headlines[i], 0, 100 + i*lineheight);    }
 
   }
 }
