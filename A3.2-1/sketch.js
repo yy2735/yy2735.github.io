@@ -1,4 +1,5 @@
 var headlines = [];
+var sections = [];
 
 
 function preload() {
@@ -68,4 +69,14 @@ function extractHeadlines() {
     // .abstract, .byline, .section, etc. etc.
     append(headlines, h);
   }
+
+  // console.log(headlines); // make sure counted data looks as expected
+}
+
+function extractSections() {
+  for (var i = 0; i < nytResponse.results.length; i++) {
+    var section = nytResponse.results[i].section;
+    append(sections, section);
+  }
+  //console.log(sections);
 }
