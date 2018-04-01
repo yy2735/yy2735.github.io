@@ -34,14 +34,14 @@ function draw() {
   translate(margin, margin);
 
   var lineheight = 30;
-  var rectheight = 10;
-  
+  var rectheight = 0;
+
 
 
 
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
-    fill(191,227,255,150);
+    fill("#0066ff");
     rect(0, 100 + i*lineheight, 6*headlines[i].length)
 
     //draw headline, section, subsection
@@ -50,15 +50,15 @@ function draw() {
     // text(section[i], 540, 100 + i*lineheight);
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
       push();
-      fill("#FFC859");
+      fill("#99ff33");
       textStyle(BOLD);
       textFont('Helvetica');
-      textSize(10 + (mouseX / width)*30);
+      textSize(5 + (mouseY / width)*5);
       textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
     } else {
-      fill("#00A6FF")
+      fill("#ff9900")
       textSize(12)
       textFont('Helvetica');
       text(headlines[i], 0, 100 + i*lineheight);    }
