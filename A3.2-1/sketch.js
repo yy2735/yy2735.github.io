@@ -40,8 +40,7 @@ function draw() {
   for (var i = 0; i < headlines.length; i++) {
     fill("#3366ff");
     rect(2, 2 + i*lineheight, 2*headlines[i].length)
-    or (var i = 0; i < headlines.length; i++) {
-    var words = split(headlines[i], ' ');
+  
 
 
 
