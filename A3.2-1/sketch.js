@@ -33,10 +33,6 @@ function draw() {
   var margin = 10;
   translate(margin, margin);
 
-  for (var i = 0; i < headlines.length; i++) {
-    var words = split(headlines[i], ' ');
-
-    var nextX = 0;
 
     for (var j=0; j<words.length; j++) {
       // draw headline
