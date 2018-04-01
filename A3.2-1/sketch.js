@@ -31,7 +31,7 @@ function draw() {
 
  
   var margin = 10;
-  var lineheight = 10;
+  var lineheight = 30;
   var rectheight = 10;
   translate(margin, margin);
 
@@ -40,7 +40,7 @@ function draw() {
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
     fill(191,227,255,150);
-    rect(0, 100 + i*lineheight, 6*headlines[i].length)
+    rect(0, 0 + i*lineheight, 6*headlines[i].length)
 
     //draw headline, section, subsection
 
