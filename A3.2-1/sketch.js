@@ -53,9 +53,9 @@ function draw() {
       fill("#99ff33");
       textStyle(BOLD);
       textFont('Comic Sans MS');
-      textSize(10 + (mouseY / width)*5);
-      textAlign(RIGHT);
-      text(headlines[i], 800, 100 + i*lineheight); 
+      textSize(10 + (mouseY / width)*10);
+      textAlign(LEFT);
+      text(headlines[i], 50, 50 + i*lineheight); 
       pop();
     } else {
       fill("#ff9900")
