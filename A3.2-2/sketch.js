@@ -51,14 +51,15 @@ function draw() {
 
       if (mouseIsPressed)
       {
-      push();
+
       fill("#99ff33");
       textStyle(BOLD);
       textFont('Comic Sans MS');
       textSize(50 + (mouseY / width)*1000);
       textAlign(LEFT);
-      text(headlines[i], 50, 50 + i*lineheight); 
-      pop();
+      text(words[j]+' ', nextX, i*lineheight);
+    nextX += textWidth(words[j]+'  ');
+
     } else {
       noFill();
       noStroke();
