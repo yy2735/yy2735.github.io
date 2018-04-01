@@ -1,9 +1,12 @@
+
+var headlines = [];
+var maxHeadLen, minHeadLen;
+var section = [];
 var headlines = [];
 var sign = [
 "?", "!"];
 var punc = [
 ".", ","];
-
 function preload() {
 
   var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
@@ -58,8 +61,6 @@ function draw() {
     noStroke();
     text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
-    
-    
     }
     
 
