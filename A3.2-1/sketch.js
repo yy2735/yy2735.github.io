@@ -1,4 +1,7 @@
 var headlines = [];
+var section = [];
+var subsection = [];
+var maxHeadLen, minHeadLen;
 
 function preload() {
 
@@ -82,7 +85,10 @@ function extractHeadlines() {
       minHeadLen = h.length;
     }
     append(headlines, h);
-    
+    //console.log(ss);
   }
 
+  //console.log(headlines); // make sure counted data looks as expected
+  //console.log(maxHeadLen);
+  //console.log(minHeadLen);
 }
