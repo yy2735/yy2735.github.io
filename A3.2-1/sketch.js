@@ -28,7 +28,7 @@ function draw() {
   background(0);
 
  
-  var margin = 10;
+  var margin = 1;
   translate(margin, margin);
 
   var lineheight = 30;
