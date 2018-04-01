@@ -37,6 +37,7 @@ function draw() {
   var rectheight = 10;
 
 
+
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
     fill(191,227,255,150);
@@ -84,4 +85,10 @@ function extractHeadlines() {
       minHeadLen = h.length;
     }
     append(headlines, h);
- 
+    //console.log(ss);
+  }
+
+  //console.log(headlines); // make sure counted data looks as expected
+  //console.log(maxHeadLen);
+  //console.log(minHeadLen);
+}
