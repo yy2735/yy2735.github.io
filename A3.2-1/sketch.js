@@ -55,7 +55,7 @@ function draw() {
       fill("#3366ff")
       textSize(12)
       textFont('Helvetica');
-      text(headlines[i], 0, 100 + i*lineheight);    }
+      text(headlines[i], 100, 100 + i*lineheight);    }
 
   }
 }
