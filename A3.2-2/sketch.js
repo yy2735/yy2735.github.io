@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-
+  var rectheight = 4;
   var lineheight = 100;
   var margin = .2;
   translate(margin, margin);
@@ -39,7 +39,7 @@ function draw() {
 
     var nextX = 0;
 
-      var rectheight = 4;
+      
 
 
 //draw sign to circles
@@ -52,7 +52,7 @@ function draw() {
 
       //text
 
-     if (mouseIsPressed){
+  if (mouseIsPressed){
     fill(180);
     text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
