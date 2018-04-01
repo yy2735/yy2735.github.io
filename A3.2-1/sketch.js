@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500,1000);
+  createCanvas(1000,1000);
   background(0);
 
   textSize(10);
@@ -47,7 +47,7 @@ function draw() {
       fill("#99cc00");
       textStyle(BOLD);
       textFont('Helvetica');
-      textSize(10 + (mouseX / width)*30);
+      textSize(10 + (mouseY / margin)*30);
       textAlign(LEFT);
       text(headlines[i], 100, 100 + i*lineheight); 
       pop();
