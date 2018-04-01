@@ -40,7 +40,7 @@ function draw() {
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
     fill(191,227,255,150);
-    rect(0, 0 + i*lineheight, 2*headlines[i].length)
+    rect(0, 0 + i*lineheight, headlines[i].length)
 
     //draw headline, section, subsection
 
