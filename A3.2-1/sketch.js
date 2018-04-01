@@ -41,7 +41,7 @@ function draw() {
 
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
-    fill("#0066ff");
+    fill("#3366ff");
     rect(0, 100 + i*lineheight, 6*headlines[i].length)
 
     //draw headline, section, subsection
