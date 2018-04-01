@@ -48,7 +48,7 @@ function draw() {
       text(words[j]+ ' white house', nextX, i*lineheight);
       nextX += textWidth(words[j]+' ');
     }
-    if (mouseX > margin && mouseX < margin+linelength && mouseY < margin+i*lineheight && mouseY > margin+i*lineheight+(-1*lineheight)
+    if (mouseX < margin+linelength && mouseY < margin+i*lineheight)
     {textSize = 100}    
     
   }
