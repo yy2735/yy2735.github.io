@@ -52,7 +52,7 @@ function draw() {
       push();
       fill("#99ff33");
       textStyle(BOLD);
-      textFont('Chicle');
+      textFont('Comic Sans MS');
       textSize(10 + (mouseY / width)*5);
       textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
