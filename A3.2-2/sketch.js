@@ -48,6 +48,22 @@ function draw() {
       line(i*lineheight,0, nextX, i*lineheight);
 
       //text
+
+      if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
+      {
+      push();
+      fill("#99ff33");
+      textStyle(BOLD);
+      textFont('Comic Sans MS');
+      textSize(50 + (mouseY / width)*1000);
+      textAlign(LEFT);
+      text(headlines[i], 50, 50 + i*lineheight); 
+      pop();
+    } else {
+      fill("#3366ff")
+      textSize(12)
+      textFont('Helvetica');
+      text(headlines[i], 100, 100 + i*lineheight);    }
       noFill();
       noStroke();
       text(words[j]+' ', nextX, i*lineheight);
@@ -66,17 +82,22 @@ function draw() {
 
 
 
-       if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
-      {
-      push();
-      fill("#99ff33");
-      textStyle(BOLD);
-      textFont('Comic Sans MS');
-      textSize(50 + (mouseY / width)*1000);
-      textAlign(LEFT);
-      text(headlines[i], 50, 50 + i*lineheight); 
-      pop();
-  
+      //signs 
+      if (sign.includes(words[j].toLowerCase())) {
+        noStroke();
+        fill(255, 179, 102);
+        rect(nextX,i*lineheight,40,40);
+        //punc
+      } else if (punc.includes(words[j])){
+        noStroke();
+        fill(51,204,204,50);
+        ellipse(nextX,i*lineheight,20,20);
+        //alphabets
+      } else if (str2.includes(words[j].toLowerCase())){
+        fill(179, 255, 102);
+        ellipse(nextX,i*lineheight,size,size);
+
+
 
       };
       
