@@ -31,7 +31,7 @@ function draw() {
 
  
   var margin = 10;
-  var lineheight = 30;
+  var lineheight = 10;
   var rectheight = 10;
   translate(margin, margin);
 
@@ -47,7 +47,7 @@ function draw() {
       fill("#99cc00");
       textStyle(BOLD);
       textFont('Helvetica');
-      textSize(50);
+      textSize( (mouseX / width)*40);
       textAlign(LEFT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
