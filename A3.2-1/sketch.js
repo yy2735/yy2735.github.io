@@ -49,7 +49,7 @@ function draw() {
       nextX += textWidth(words[j]+' ');
     }
     if (mouseX < margin+linelength && mouseY < margin+i*lineheight)
-    {textSize = 100}    
+    fill(255,0,255)
     
   }
 }
