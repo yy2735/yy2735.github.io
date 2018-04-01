@@ -13,26 +13,35 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500, 1000);
-  background(0);
+  createCanvas(750, 800);
+  background(255);
 
   textSize(10);
   textAlign(LEFT);
 
-  noLoop(); 
+  //noLoop(); // since we're not animating, one frame is sufficient: run draw() just once
 
   extractHeadlines();
-  extractSections();
 }
 
 function draw() {
-  background(0);
+  background(255);
 
-  var lineheight = 50;
-  var margin = 10;
+  // Set the left and top margin
+  var margin = 40;
   translate(margin, margin);
 
-   for (var i = 0; i < headlines.length; i++) {
+  var lineheight = 30;
+  var rectheight = 10;
+
+  //title of the page
+  fill(0);
+  textSize(50)
+  textStyle(BOLD);
+  textFont('Georgia');
+  text("New York Times", 0, 30);
+
+  for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
     fill(191,227,255,150);
     rect(0, 100 + i*lineheight, 6*headlines[i].length)
