@@ -51,9 +51,15 @@ function draw() {
       fill("#FFC859");
       textStyle(BOLD);
       textFont('Helvetica');
+<<<<<<< HEAD
       textSize(10 + (mouseX / width)*30);
       textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
+=======
+      textSize(10 + (mouseY / margin)*2);
+      textAlign(RIGHT);
+      text(headlines[i], 100, 100 + i*lineheight); 
+>>>>>>> parent of 46c7e43... h
       pop();
     } else {
       fill("#00A6FF")
