@@ -38,9 +38,7 @@ function draw() {
 
       var rectheight = 4;
 
- if (mouseX > margin && mouseX < margin+linelength && mouseY < margin+i*lineheight && mouseY > margin+i*lineheight+(-1*lineheight))
-      {fill(255);
-        text(headlines[i], 0, i*lineheight);}
+
 //draw sign to circles
 
 
@@ -82,6 +80,22 @@ function draw() {
       } else if (str2.includes(words[j].toLowerCase())){
         fill(179, 255, 102);
         ellipse(nextX,i*lineheight,size,size);
+
+        if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight))
+      {
+      push();
+      fill("#99ff33");
+      textStyle(BOLD);
+      textFont('Comic Sans MS');
+      textSize(50 + (mouseY / width)*1000);
+      textAlign(LEFT);
+      text(headlines[i], 50, 50 + i*lineheight); 
+      pop();
+    } else {
+      fill("#3366ff")
+      textSize(12)
+      textFont('Helvetica');
+      text(headlines[i], 100, 100 + i*lineheight);    }
 
       };
       
