@@ -1,7 +1,5 @@
 var headlines = [];
-var section = [];
-var subsection = [];
-var maxHeadLen, minHeadLen;
+
 
 function preload() {
 
