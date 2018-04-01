@@ -1,5 +1,4 @@
 var headlines = [];
-var sections = [];
 
 
 function preload() {
@@ -15,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500,1000);
+  createCanvas(1000,1000);
   background(0);
 
   textSize(10);
@@ -28,16 +27,17 @@ function setup() {
 function draw() {
   background(0);
 
-  var lineheight = 50;
+ 
   var margin = 10;
+  var lineheight = 30;
+  var rectheight = 10;
   translate(margin, margin);
 
+
+
   for (var i = 0; i < headlines.length; i++) {
-    var words = split(headlines[i], ' ');
 
-    var nextX = 0;
-
-    
+    fill("#ff9900");
     
 
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
@@ -68,14 +68,3 @@ function extractHeadlines() {
     // .abstract, .byline, .section, etc. etc.
     append(headlines, h);
   }
-
-  // console.log(headlines); // make sure counted data looks as expected
-}
-
-function extractSections() {
-  for (var i = 0; i < nytResponse.results.length; i++) {
-    var section = nytResponse.results[i].section;
-    append(sections, section);
-  }
-  //console.log(sections);
-}
