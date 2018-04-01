@@ -17,18 +17,17 @@ function preload() {
 
 function setup() {
   createCanvas(750, 800);
-  background(255);
+  background(0);
 
   textSize(10);
   textAlign(LEFT);
 
-  //noLoop(); // since we're not animating, one frame is sufficient: run draw() just once
 
   extractHeadlines();
 }
 
 function draw() {
-  background(255);
+  background(0);
 
   // Set the left and top margin
   var margin = 40;
@@ -37,12 +36,6 @@ function draw() {
   var lineheight = 30;
   var rectheight = 10;
 
-  //title of the page
-  fill(0);
-  textSize(50)
-  textStyle(BOLD);
-  textFont('Georgia');
-  text("New York Times", 0, 30);
 
   for (var i = 0; i < headlines.length; i++) {
     //draw rectangle
@@ -91,10 +84,4 @@ function extractHeadlines() {
       minHeadLen = h.length;
     }
     append(headlines, h);
-    //console.log(ss);
-  }
-
-  //console.log(headlines); // make sure counted data looks as expected
-  //console.log(maxHeadLen);
-  //console.log(minHeadLen);
-}
+ 
