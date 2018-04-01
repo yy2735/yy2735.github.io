@@ -27,7 +27,7 @@ function setup() {
 }
 
 function draw() {
-  background(255,255,255);
+  background(0);
 
  
   var margin = 10;
@@ -46,11 +46,13 @@ function draw() {
       push();
       fill("#99cc00");
       textStyle(BOLD);
+      textFont('Helvetica');
       textSize(10 + (mouseX / width)*30);
+      textAlign(RIGHT);
       text(headlines[i], 800, 100 + i*lineheight); 
       pop();
     } else {
-      fill("#ff6666")
+      fill("#00A6FF")
       textSize(12)
       textFont('Helvetica');
       text(headlines[i], 0, 100 + i*lineheight);    }
