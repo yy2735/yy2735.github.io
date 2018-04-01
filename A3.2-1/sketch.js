@@ -31,9 +31,7 @@ function draw() {
 
  
   var margin = 10;
-  translate(margin, margin);
-
-  var lineheight = 30;
+  var lineheight = 10;
   var rectheight = 10;
   translate(margin, margin);
 
