@@ -43,7 +43,7 @@ function draw() {
       if (sections[i] == 'Trump') {
         fill(255,255,255);
       } else {
-        fill(255, 0, 0);
+        fill(0,0,255);
       }
       text(words[j]+ ' white house', nextX, i*lineheight);
       nextX += textWidth(words[j]+' ');
