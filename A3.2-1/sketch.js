@@ -28,17 +28,24 @@ function setup() {
 function draw() {
   background(0);
 
- 
+  var lineheight = 50;
   var margin = 10;
-  var lineheight = 30;
-  var rectheight = 10;
   translate(margin, margin);
 
-
-
   for (var i = 0; i < headlines.length; i++) {
+    var words = split(headlines[i], ' ');
 
-    fill("#ff9900");
+    var nextX = 0;
+
+    for (var j=0; j<words.length; j++) {
+      // draw headline
+      if (sections[i] == 'U.S.') {
+        fill(255,255,255);
+      } else {
+        fill(255, 0, 0);
+      }
+      text(words[j]+ ' ', nextX, i*lineheight);
+      nextX += textWidth(words[j]+' ');
     
 
     if (mouseX > margin && mouseX < width - margin && mouseY < 120 + margin+i*lineheight && mouseY > 80 + margin+i*lineheight+(-1*rectheight)) {
