@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000,1000);
+  createCanvas(800,800);
   background(0);
 
   textSize(10);
