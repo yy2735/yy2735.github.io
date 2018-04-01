@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(750, 800);
+  createCanvas(500,1000);
   background(0);
 
   textSize(10);
@@ -35,6 +35,7 @@ function draw() {
 
   var lineheight = 30;
   var rectheight = 10;
+  translate(margin, margin);
 
 
 
