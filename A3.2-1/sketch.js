@@ -1,28 +1,5 @@
 var headlines = [];
 
-function extractHeadlines() {
-  //console.log(nytResponse); // take a look at the full API response structure
-
-  for (var i = 0; i < (nytResponse.results.length); i++) {
-    var h = nytResponse.results[i].title;
-    // besides .title, other text data available to you include:
-    // .abstract, .byline, .section, etc. etc.
-
-    if (!maxHeadLen) {
-      maxHeadLen = h.length;
-    } else if (h.length > maxHeadLen) {
-      maxHeadLen = h.length;
-    }
-
-    if (!minHeadLen) {
-      minHeadLen = h.length;
-    } else if (h.length < minHeadLen) {
-      minHeadLen = h.length;
-    }
-    append(headlines, h);
-
-    
-
 function preload() {
 
   // Assemble url for API call
@@ -85,11 +62,27 @@ function draw() {
   }
 }
 
+function extractHeadlines() {
+  //console.log(nytResponse); // take a look at the full API response structure
 
-    //console.log(ss);
+  for (var i = 0; i < (nytResponse.results.length); i++) {
+    var h = nytResponse.results[i].title;
+    // besides .title, other text data available to you include:
+    // .abstract, .byline, .section, etc. etc.
+
+    if (!maxHeadLen) {
+      maxHeadLen = h.length;
+    } else if (h.length > maxHeadLen) {
+      maxHeadLen = h.length;
+    }
+
+    if (!minHeadLen) {
+      minHeadLen = h.length;
+    } else if (h.length < minHeadLen) {
+      minHeadLen = h.length;
+    }
+    append(headlines, h);
+    
   }
 
-  //console.log(headlines); // make sure counted data looks as expected
-  //console.log(maxHeadLen);
-  //console.log(minHeadLen);
 }
