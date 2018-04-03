@@ -28,7 +28,7 @@ function draw(){
   var rectheight = 15;
   textSize(12);
 
-  for (var i = 0; i <RecyclingBinsCount.length; i++) {
+  for (var i = 0; i < RecyclingBinsCount.length; i++) {
     fill(190, 30, 70);
     var rectwidth = map(RecyclingBinsCount[i], 0, 163.75, 0, 1000);
     rect(0, (i+2)*lineheight, rectwidth, -1*rectheight)
