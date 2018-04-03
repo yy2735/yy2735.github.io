@@ -1,121 +1,39 @@
+var table;
+var Borough;
+var RecyclingBinsCount;
 
-var headlines = [];
-var maxHeadLen, minHeadLen;
-var section = [];
-var headlines = [];
-var sign = [
-"?", "!"];
-var punc = [
-".", ","];
-function preload() {
-
-  var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
-  var apikey = "5048c9901c224a338bb10cf3b8f0b2b3"; 
-  url += "?api-key=" + apikey;
-
-  nytResponse = loadJSON(url);
+function preload(){
+  table = loadTable('Public_Recycling_Bins_Borough.csv', 'csv', 'header');
 }
 
 function setup() {
-  createCanvas(1000, 2000);
-  background(255);
-
-  textSize(10);
-  textAlign(LEFT);
-
-  noLoop(); 
-
-  extractHeadlines();
+  createCanvas(1000, 1000);
+  loadData();
+  noLoop();
 }
 
-function draw() {
-  var rectheight = 4;
-  var lineheight = 100;
-  var margin = .2;
-  translate(margin, margin);
-
-  for (var i = 0; i < headlines.length; i++) {
-    var words = split(headlines[i], '');
-
-    var nextX = 0;
-
-      
-
-
-//draw sign to circles
-
-
-    for (var j = 0; j < words.length; j++) {
-      stroke(255, 102, 102);
-      strokeWeight(0.1);
-      line(i*lineheight,0, nextX, i*lineheight);
-
-      //text
-
-  if (mouseIsPressed){
-    fill(180);
-    text(words[j]+' ', nextX, i*lineheight);
-    nextX += textWidth(words[j]+'  ');
-    } else {
-    noFill();
-    noStroke();
-    text(words[j]+' ', nextX, i*lineheight);
-    nextX += textWidth(words[j]+'  ');
-    }
-    
-
-      //define size of alphabets
-      var str1 = 'abcdefghijklmnopqrstuvwxyz';
-      var str2 = split(str1, '');
-      var size = (str2.indexOf(words[j])+1);
-
-      //define size of numbers
-      var str3 = '0123456789';
-      var str4 = split(str3, '');
-      var sizen = (str4.indexOf(words[j])+1);
-
-
-
-      //signs 
-      if (sign.includes(words[j].toLowerCase())) {
-        noStroke();
-        fill(255, 179, 102);
-        rect(nextX,i*lineheight,40,40);
-        //punc
-      } else if (punc.includes(words[j])){
-        noStroke();
-        fill(51,204,204,50);
-        ellipse(nextX,i*lineheight,20,20);
-        //alphabets
-      } else if (str2.includes(words[j].toLowerCase())){
-        fill(179, 255, 102);
-        ellipse(nextX,i*lineheight,size,size);
-
-
-
-      };
-      
-    }
-  }
-
-
+function loadData() {
+  Borough = table.getColumn("Borough");
+  RecyclingBinsCount = table.getColumn("Amount");
+  console.log(Borough);
+  console.log(RecyclingBinsCount);
 }
 
+function draw(){
+  background(100, 100, 100, 200);
+  fill(255, 255, 255);
+  textSize(20);
+  text("Public Recycling Bins Count by Borough", 20,20);
+  var lineheight = 25;
+  var rectheight = 15;
+  textSize(12);
 
+  for (var i = 0; i <RecyclingBinsCount.length; i++) {
+    fill(190, 30, 70);
+    var rectwidth = map(RecyclingBinsCount[i], 0, 163.75, 0, 1000);
+    rect(0, (i+2)*lineheight, rectwidth, -1*rectheight)
 
-
-function extractHeadlines() {
-
-  // console.log(nytResponse); // take a look at the full API response structure
-
-  for (var i = 0; i < nytResponse.results.length; i++) {
-    var h = nytResponse.results[i].title;
-    // besides .title, other text data available to you include:
-    // .abstract, .byline, .section, etc. etc.
-
-    append(headlines, h);
+    fill(255, 255, 255);
+    text(Borough[i], 0, (i+2)*lineheight);
   }
-
-
-  // console.log(headlines); // make sure counted data looks as expected
 }
