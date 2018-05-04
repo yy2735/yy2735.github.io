@@ -8,20 +8,7 @@ var state = 0;
 var button;
 var buttonText = "Explore by Bin Type";
 
-function 
-draw(){
-rect(50, 350,10,10)
-fill(240,90,40)
 
-rect(50, 370,10,10)
-fill(225,110,60)
-
-rect(50, 390,10,10)
-fill(255,130,80)
-
-rect(50, 4100,10,10)
-fill(255,150,100)
-}
 function preload(){
   table = loadTable('Public_Recycling_Bins_Borough.csv', 'csv', 'header');
   tableEthnicity = loadTable('Type.csv', 'csv');
@@ -43,6 +30,21 @@ function loadData() {
   borough = table.getColumn("Borough");
   amount = table.getColumn("Amount");
   ethnicityTable = tableEthnicity.getArray();
+}
+
+function 
+draw(){
+rect(50, 350,10,10)
+fill(240,90,40)
+
+rect(50, 370,10,10)
+fill(225,110,60)
+
+rect(50, 390,10,10)
+fill(255,130,80)
+
+rect(50, 4100,10,10)
+fill(255,150,100)
 }
 
 function draw(){
@@ -78,12 +80,7 @@ function draw(){
       B_colour=40+j*20;
       fill(R_colour,G_colour,B_colour);
          }
-      // R_colour=190+j*100;
-      // G_colour=30+j*100;
-      // B_colour=70+j*100;
-      // fill(R_colour,G_colour,B_colour);
-
-      //rect (100, 100, 60, 50);
+      
       var rectwidth = map(ethnicityTable[i][j], 0, 163.75, 0, 1000);
       rect(totalwidth, (i+2)*lineheight, rectwidth, -1*rectheight);
       totalwidth=totalwidth+rectwidth;
