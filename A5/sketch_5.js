@@ -10,13 +10,13 @@ function draw() {
   system.addParticle();
   system.run();
 }
-
+var s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
 // A simple Particle class
 var Particle = function(position) {
   this.acceleration = createVector(0, 0.05);
   this.velocity = createVector(random(-1, 1), random(-1, 0));
   this.position = position.copy();
-  this.lifespan = 255.0;
+  this.lifespan = s;
 };
 
 Particle.prototype.run = function() {
