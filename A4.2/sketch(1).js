@@ -8,6 +8,19 @@ var state = 0;
 var button;
 var buttonText = "Explore by Bin Type";
 
+draw()
+rect(50, 350,10,10)
+fill(240,90,40)
+
+rect(50, 370,10,10)
+fill(225,110,60)
+
+rect(50, 390,10,10)
+fill(255,130,80)
+
+rect(50, 4100,10,10)
+fill(255,150,100)
+
 function preload(){
   table = loadTable('Public_Recycling_Bins_Borough.csv', 'csv', 'header');
   tableEthnicity = loadTable('Type.csv', 'csv');
@@ -21,7 +34,7 @@ function setup() {
   createCanvas(1200,500);
   loadData();
 
-  textSize(25);
+  textSize(18);
   noStroke();
 }
 
@@ -36,7 +49,7 @@ function draw(){
   if (state === 0 ){
     fill("#86B956");
     textSize(30);
-    text("Public Recycling Bins Count by Borough",100,40);
+    text("Public Recycling Bins Count by Borough",50,30);
     var lineheight = 30;
     var rectheight = 20;
     textSize(12);
@@ -44,7 +57,7 @@ function draw(){
     for (var i = 0; i < amount.length; i++) {
       fill("#57AFCE");
       var rectwidth = map(amount[i], 0, 163.75, 0, 1000);
-      rect(200, (i+2)*lineheight, rectwidth, -1*rectheight)
+      rect(100, (i+2)*lineheight, rectwidth, -1*rectheight)
 
       fill("#86B956");
       text(borough[i], 0, (i+2)*lineheight);
@@ -53,16 +66,21 @@ function draw(){
   else {
     fill("#86B956");
     textSize(30);
-    text("Public Recycling Bins Count by Type",100,40);
+    text("Public Recycling Bins Count by Type",50,30);
     var lineheight = 30;
     var rectheight = 20;
     for (var i = 0; i < ethnicityTable.length; i++) {
       totalwidth=100;
        for (var j = 0; j < 5; j++){
-      R_colour=190+j*100;
-      G_colour=30+j*100;
-      B_colour=70+j*100;
+      R_colour=240+j*20;
+      G_colour=90+j*20;
+      B_colour=40+j*20;
       fill(R_colour,G_colour,B_colour);
+         }
+      // R_colour=190+j*100;
+      // G_colour=30+j*100;
+      // B_colour=70+j*100;
+      // fill(R_colour,G_colour,B_colour);
 
       //rect (100, 100, 60, 50);
       var rectwidth = map(ethnicityTable[i][j], 0, 163.75, 0, 1000);
@@ -72,34 +90,11 @@ function draw(){
     }
 
     push();
-    // Legend
-    // textSize(14);
-    // fill(210, 80, 150);
-    // rect(30, 40, 30, 30);
-    // fill(255, 255, 255);
-    // text("Top 10 Cause", 65, 60);
-    //
-    // fill(190, 30, 70);
-    // rect(170, 40, 30, 30);
-    // fill(255, 255, 255);
-    // text("Top 3 Cause", 205, 60);
-
-    // textSize(18);
-    // // Rows of grid: ethnicity
-    // fill(255, 255, 255);
-    // text("Asian",25,120);
-    // text("Black",25,165);
-    // text("Hispanic",5,210);
-    // text("White",25,255);
-
-    // Columns of grid: leading causes
-    // rotate(PI / 2.0);
-    // for (var i = 0; i < leadingCauses.length; i++) {
-    //   text(leadingCauses[i], 280, -100-(i*45));
-    // }
+   
     pop();
   }
 }
+
 
 function toggleState() {
   state = (state == 0) ? 1 : 0;
