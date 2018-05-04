@@ -8,7 +8,8 @@ var state = 0;
 var button;
 var buttonText = "Explore by Bin Type";
 
-draw()
+function 
+draw(){
 rect(50, 350,10,10)
 fill(240,90,40)
 
@@ -20,7 +21,7 @@ fill(255,130,80)
 
 rect(50, 4100,10,10)
 fill(255,150,100)
-
+}
 function preload(){
   table = loadTable('Public_Recycling_Bins_Borough.csv', 'csv', 'header');
   tableEthnicity = loadTable('Type.csv', 'csv');
