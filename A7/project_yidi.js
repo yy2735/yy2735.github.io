@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  width = 1800;
+  width = 2000;
   length = 2000;
   createCanvas(width, length);
   background(0);
@@ -118,22 +118,22 @@ for (var i = 0; i < 1000; i++) {
   var k = map(long[i], min(long), longsecond, 0, width);
 
   if (type[i]==="Subproperty") {
-    fill(100,30,170);
+    fill("#CAE274");
     ellipse(k, length-h, ra, ra);
   }
   //ellipse(k, length-h, ra, ra);
   if (type[i]==="Indoor") {
-    fill("#86B956");
+    fill("#CF74E2");
     ellipse(k, length-h, ra, ra);
   }
 
   if (type[i]==="Outdoor") {
-    fill("#57AFCE");
+    fill("#E29F74");
     ellipse(k, length-h, ra, ra);
   }
 
   if (type[i]==="Greenthumb") {
-    fill(255, 255, 255);
+    fill("#BCDFEB");
     ellipse(k, length-h, ra, ra);
   }
 
